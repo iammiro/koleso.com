@@ -64,7 +64,14 @@ let webpackConfig = {
 				options: {
 					name: '[path][name].[ext]',
 				}
-			}
+			},
+            {
+                test: /\.(ttf|eot|woff|woff2)$/,
+                loader: 'file-loader',
+                options: {
+                    name: 'fonts/[name].[ext]',
+                },
+            },
 		],
 	},
 
