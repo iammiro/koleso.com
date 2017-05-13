@@ -11,4 +11,22 @@ export default () => {
         map: map,
         icon: img
     });
+
+    window.scrollTo(0,1);
+
+    window.getOnlineStatus = function getOnlineStatus() {
+        return navigator.onLine;
+    };
+
+    console.log(getOnlineStatus());
+
+    marker.addListener('click', function() {
+        console.log('test animation');
+            TweenMax.to('.rent_time', 1, {y: -230, ease: Circ.easeOut});
+    });
+
+    map.addListener('click', function() {
+        console.log('test animation');
+        TweenMax.to('.rent_time', 1, {y: 0, ease: Circ.easeOut});
+    });
 };

@@ -1,30 +1,34 @@
 extends layouts/root
 
 block main
-    div.map_header
-        div.back
-            a(href="/")
-                img(src="img/back.png")
-        h1.map_h1 Автомобиль на карте
-        div.menu
-            a(href="/")
-                img(src="img/menu.png")
-    div#map
-    div.rent_time
-        div.map_address
-            div.pointer
-                img(src="img/pointer.png")
-            div.address ул. Большая Васильковская </br>130/2б
-            div.distance 134 км
-        div.timer
-            span.timer_clock 22:41
-            span.timer_text Осталось <br> до окончания <br> аренды
-        a(href="/").close_auto Закрыть автомобиль
-    div.map_footer
-        div.footer_phone
-            img(src="img/phone_icon2.png")
-            span +38 (093) 123 - 45 - 67
-        div.footer_info
-            img(src="img/info-icon.png")
-            span Больше информации
+    div.map_wrapper
+        div.map_header
+            div.back
+                a(href="/")
+                    img(src="img/back.png")
+            h1.map_h1 Автомобиль на карте
+            div.menu
+                a(href="/")
+                    img(src="img/menu.png")
+        div#map
+        div.rent_time
+            div.map_address
+                div.pointer
+                    img(src="img/pointer.png")
+                div.address ул. Большая Васильковская </br>130/2б
+                div.distance 134 км
+            div#timer_wrapper
+                div.timer
+                    span.timer_clock 22:41
+                    span.timer_text Осталось <br> до окончания <br> аренды
+                a(href="/").close_auto Закрыть автомобиль
+        div.map_footer
+            div.footer_phone
+                img(src="img/phone_icon2.png")
+                span +38 (093) 123 - 45 - 67
+            div.footer_info
+                img(src="img/info-icon.png")
+                span Больше информации
     script( defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBSoYh1RpInYCL6mvLlECisWV4GZOE2Doo&callback=initMap")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js")
+    script(src="https://code.jquery.com/jquery-3.2.1.min.js")

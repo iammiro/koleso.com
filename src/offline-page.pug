@@ -1,0 +1,20 @@
+extends layouts/root
+
+block main
+    div.offline_wrapper
+        div.offline_header
+            div.menu
+                a(href="/")
+                    img(src="img/menu.png")
+        div.offline_img
+            img(src="img/offline.png")
+        div.offline_text Нет связи<br>с вашим автомобилем,<br>позвоните нам
+        a(href="/").offline_btn Позвонить
+            img(src="img/offline_phone.png")
+        div.map_footer.offline_footer
+            div.footer_phone
+                img(src="img/phone_icon2.png")
+                span +38 (093) 123 - 45 - 67
+            div.footer_info
+                img(src="img/info-icon.png")
+                span Больше информации
