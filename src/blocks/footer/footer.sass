@@ -1,0 +1,21 @@
+.footer
+  @include flex-row-space-between-center
+  background-color: #ffffff
+  width: 100%
+  margin-top: 20px
+  position: absolute
+  bottom: 0
+  height: 55px
+  z-index: 100
+  &__phone, &__info
+    @include font-normal-400-left
+    @include flex-row-center-center
+    margin-right: 3px
+    width: 201px
+    height: 26px
+    color: #2ec4ff
+    font-family: $light-font-stack
+    font-size: 9px
+    & img
+      margin-right: 5px
+      width: 13px

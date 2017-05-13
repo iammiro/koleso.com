@@ -22,11 +22,11 @@ export default () => {
 
     marker.addListener('click', function() {
         console.log('test animation');
-            TweenMax.to('.rent_time', 1, {y: -230, ease: Circ.easeOut});
+            TweenMax.to('.timer-pop-up-window', 1, {y: -290, ease: Circ.easeOut});
     });
 
     map.addListener('click', function() {
         console.log('test animation');
-        TweenMax.to('.rent_time', 1, {y: 0, ease: Circ.easeOut});
+        TweenMax.to('.timer-pop-up-window', 1, {y: 0, ease: Circ.easeOut});
     });
 };

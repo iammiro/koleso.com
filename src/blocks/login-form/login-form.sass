@@ -1,0 +1,51 @@
+.login-form
+  @include flex-column-center-center
+  width: 90%
+  &__phone, &__pass
+    @include font-normal-400-left
+    background-repeat: no-repeat
+    background-position: 4px
+    outline: none
+    border-left: none
+    border-right: none
+    border-top: none
+    border-bottom: 1px solid black
+    width: 90%
+    height: 45px
+    padding-left: 30px
+    color: #626970
+    font-family: $medium-font-stack
+    font-size: 15px
+    margin-top: 15px
+  &__pass
+    background-image: url("../img/pass_icon.png")
+    background-size: 10px
+  &__phone
+    background-image: url("../img/phone_icon.png")
+    background-size: 10px
+  &__phone::placeholder, &__pass::placeholder
+    @include font-normal-400-left
+    color: #b9b9b9
+    font-family: $light-font-stack
+    font-size: 16px
+  &__pass-recovery-link
+    @include font-normal-400-center
+    width: 171px
+    height: 29px
+    color: #2ec4ff
+    font-family: $light-font-stack
+    font-size: 15px
+    text-decoration: none
+    margin-top: 20px
+  &__submit-btn
+    @include font-normal-400-center
+    border-radius: 30px
+    width: 80%
+    height: 60px
+    background: #2ec4ff
+    box-shadow: 0 13px 17px #c4eefe
+    color: #ffffff
+    font-family: $medium-font-stack
+    font-size: 15px
+    border: none
+    margin-top: 20px

@@ -1,0 +1,20 @@
+.car-location
+  @include flex-row-space-around-center
+  height: 70px
+  width: 100%
+  background: #f1f5f8
+  box-shadow: 0px -2px 5px rgba(45, 0, 0, 0)
+  border-bottom: 1px solid lightgray
+  &__pointer img
+    height: 15px
+  &__address
+    @include font-normal-400-left
+    color: #626970
+    font-family: $light-font-stack
+    font-size: 13px
+    line-height: 1.6
+  &__distance
+    @include font-normal-400-right
+    color: #b9b9b9
+    font-family: $light-font-stack
+    font-size: 13px

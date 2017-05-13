@@ -6,7 +6,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
-const OfflinePlugin = require('offline-plugin');
+// const OfflinePlugin = require('offline-plugin');
 
 let webpackConfig = {
 	context: path.resolve(__dirname, './src'),
@@ -51,15 +51,19 @@ let webpackConfig = {
 					'sass-loader',
 				]
 			},
-			{
-				test: /\.(pug|jade)$/,
-				use: [{
-					loader: 'pug-loader',
-					options: {
-						pretty: true
-					}
-				}],
-			},
+			// {
+			// 	test: /\.(pug|jade)$/,
+			// 	use: [{
+			// 		loader: 'pug-loader',
+			// 		options: {
+			// 			pretty: true
+			// 		}
+			// 	}],
+			// },
+            {
+                test: /\.pug$/,
+                loaders: ['html-loader', 'pug-html-loader']
+            },
 			{
 				test : /\.(png|jpe?g|svg)$/,
 				loader : 'file-loader',
@@ -89,54 +93,54 @@ let webpackConfig = {
 
         new FaviconsWebpackPlugin('./img/logo.png'),
 
-        new OfflinePlugin({
-            publicPath: '/',
-            caches: {
-                main: [
-                    'app.*.css',
-                    'vendor.*.js',
-                    'app.*.js',
-
-                    '/',
-                    'index.html',
-                    'map.html',
-                    'app.bundle.js',
-                    'manifest.json',
-                    'manifest.webapp',
-                    'img/back.png',
-                    'img/logo.png',
-                    'img/marker.png',
-                    'img/marker-red.png',
-                    'img/menu.png',
-                    'img/offline.png',
-                    'img/offline_phone.png',
-                    'img/multiply-nodes-4.png',
-                    'img/pass_icon.png',
-                    'img/phone_icon.png',
-                    'img/phone_icon2.png',
-                    'img/pointer.png',
-					'icons/*.png'
-
-                ],
-                additional: [
-                    ':externals:'
-                ],
-                optional: [
-                    ':rest:'
-                ]
-            },
-            externals: [
-                '/'
-            ],
-            ServiceWorker: {
-                navigateFallbackURL: '/offline-page.html'
-            },
-            AppCache: {
-                FALLBACK: {
-                    '/': '/offline-page.html'
-                }
-            }
-        })
+        // new OfflinePlugin({
+        //     publicPath: '/',
+        //     caches: {
+        //         main: [
+        //             'app.*.css',
+        //             'vendor.*.js',
+        //             'app.*.js',
+        //
+        //             '/',
+        //             'index.html',
+        //             'map.html',
+        //             'app.bundle.js',
+        //             'manifest.json',
+        //             'manifest.webapp',
+        //             'img/back.png',
+        //             'img/logo.png',
+        //             'img/marker.png',
+        //             'img/marker-red.png',
+        //             'img/menu.png',
+        //             'img/offline.png',
+        //             'img/offline_phone.png',
+        //             'img/multiply-nodes-4.png',
+        //             'img/pass_icon.png',
+        //             'img/phone_icon.png',
+        //             'img/phone_icon2.png',
+        //             'img/pointer.png',
+			// 		'icons/*.png'
+        //
+        //         ],
+        //         additional: [
+        //             ':externals:'
+        //         ],
+        //         optional: [
+        //             ':rest:'
+        //         ]
+        //     },
+        //     externals: [
+        //         '/'
+        //     ],
+        //     ServiceWorker: {
+        //         navigateFallbackURL: '/offline-page.html'
+        //     },
+        //     AppCache: {
+        //         FALLBACK: {
+        //             '/': '/offline-page.html'
+        //         }
+        //     }
+        // })
 
 	],
 
@@ -146,7 +150,7 @@ let webpackConfig = {
 };
 
 
-const pages = ['index', 'map', 'offline-page'];
+const pages = ['index', 'map'];
 
 for (item of pages) {
 	webpackConfig.plugins.push(

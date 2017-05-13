@@ -1,0 +1,16 @@
+.map-navigation
+  @include flex-row-space-around-center
+  height: 65px
+  width: 100%
+  position: absolute
+  top: 0
+  &__header
+    @include font-normal-400-center
+    color: #626970
+    font-family: $medium-font-stack
+    font-size: 15px
+  &__back-link, &__menu-link
+    width: 10%
+    @include flex-row-center-center
+    & img
+      height: 20px
