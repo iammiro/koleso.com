@@ -1,4 +1,10 @@
 mixin car-rent-timer
     .car-rent-timer
-        span.car-rent-timer__clock 22:41
-        span.car-rent-timer__text Осталось <br> до окончания <br> аренды
+        svg(xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 194 186" class="circliful")
+            circle(class="timer__border" cx="100" cy="100" r="61" fill="none" stroke="#E6ECF3" stroke-width="10" stroke-dasharray="400, 20000" transform="rotate(-90,100,100)")
+            circle(class="timer__circle" cx="100" cy="100" r="57" fill="none" stroke="#74C3FD" stroke-width="2" stroke-dasharray="300, 20000" transform="rotate(-90,100,100)")
+            circle(cx="100" cy="100" r="38.5" fill="none")
+            text(id="timer" class="timer__time" text-anchor="middle" x="100" y="90" style="font-size: 26px; font-family: Roboto-Light, sans-serif; undefined;" fill="#74C3FD")
+            text(class="timer__text" text-anchor="middle" x="100" y="110" style="font-size: 11px; font-family: Roboto-Light, sans-serif; undefined;" fill="#C4C5C5") Осталось
+            text(class="timer__text" text-anchor="middle" x="100" y="125" style="font-size: 11px; font-family: Roboto-Light, sans-serif; undefined;" fill="#C4C5C5") до окончания
+            text(class="timer__text" text-anchor="middle" x="100" y="140" style="font-size: 11px; font-family: Roboto-Light, sans-serif; undefined;" fill="#C4C5C5") аренды
