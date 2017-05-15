@@ -1,13 +1,22 @@
 .offline-wrapper
   @include flex-column-center-center
+  height: 100vh
+  width: 100%
+  max-width: $max-width
+  background-color: #ffffff
+  z-index: 999
+  position: absolute
+  top: 65px
   &__img img
     width: 150px
+    margin-bottom: 40px
   &__text
     @include font-normal-400-center
     align-content: center
     color: #626970
     font-family: $light-font-stack
     font-size: 15px
+    margin-bottom: 40px
   &__btn
     @include flex-row-reverse-space-around-center
     @include font-normal-400-center

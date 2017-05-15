@@ -20,6 +20,12 @@ export default () => {
 
     console.log(getOnlineStatus());
 
+    if(getOnlineStatus()) {
+        $( ".offline-wrapper" ).hide();
+    } else {
+        $( ".offline-wrapper" ).show();
+    }
+
     marker.addListener('click', function() {
         console.log('test animation');
             TweenMax.to('.timer-pop-up-window', 1, {y: -290, ease: Circ.easeOut});
@@ -34,6 +40,7 @@ export default () => {
         console.log('menu');
         TweenMax.to('#menu', 1, {autoAlpha:1});
     });
+
 
     // Set the date we're counting down to
     const countDownDate = new Date("Jan 5, 2018 23:59:59").getTime();
