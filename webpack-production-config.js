@@ -49,17 +49,17 @@ let webpackConfig = {
 				use: [{
 					loader: 'pug-loader',
 					options: {
-						pretty: true
+						pretty: false
 					}
 				}],
 			},
-			{
-				test : /\.(png|jpe?g|svg)$/,
-				loader : 'file-loader',
-				options: {
-					name: '[path][name].[ext]',
-				}
-			},
+            {
+                test: /\.(jpe?g|png|gif|svg)$/i,
+                loaders: [
+                    'file-loader?hash=sha512&digest=hex&name=[path][name].[ext]',
+                    'image-webpack-loader?bypassOnDebug&optimizationLevel=7&interlaced=false'
+                ]
+            },
             {
                 test: /\.(ttf|eot|woff|woff2)$/,
                 loader: 'file-loader',
@@ -71,6 +71,18 @@ let webpackConfig = {
 	},
 
 	plugins: [
+	    new webpack.optimize.UglifyJsPlugin({
+            beautify: false,
+            mangle: {
+                screw_ie8: true,
+                keep_fnames: true
+            },
+            compress: {
+                screw_ie8: true
+            },
+            comments: false
+        }),
+
         new ExtractTextPlugin({
             filename: '[name].bundle.css',
             allChunks: true,

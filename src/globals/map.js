@@ -3,7 +3,8 @@ export default () => {
     const map = new google.maps.Map(document.getElementById('map'), {
         zoom: 16,
         center: uluru,
-        disableDefaultUI: true
+        disableDefaultUI: true,
+
     });
     const img = 'img/pointer.svg';
     const marker = new google.maps.Marker({
@@ -12,7 +13,7 @@ export default () => {
         icon: img
     });
 
-    window.scrollTo(0,1);
+    window.scrollTo(0, 1);
 
     window.getOnlineStatus = function getOnlineStatus() {
         return navigator.onLine;
@@ -20,25 +21,22 @@ export default () => {
 
     console.log(getOnlineStatus());
 
-    if(getOnlineStatus()) {
-        $( ".offline-wrapper" ).hide();
+    if (getOnlineStatus()) {
+        $(".offline-wrapper").hide();
     } else {
-        $( ".offline-wrapper" ).show();
+        $(".offline-wrapper").show();
     }
 
-    marker.addListener('click', function() {
-        console.log('test animation');
-            TweenMax.to('.timer-pop-up-window', 1, {y: -290, ease: Circ.easeOut});
+    marker.addListener('click', function () {
+        TweenMax.to('.timer-pop-up-window', 1, {y: -290, ease: Circ.easeOut});
     });
 
-    map.addListener('click', function() {
-        console.log('test animation');
+    map.addListener('click', function () {
         TweenMax.to('.timer-pop-up-window', 1, {y: 0, ease: Circ.easeOut});
     });
 
     $('#menu-btn').click(function () {
-        console.log('menu');
-        TweenMax.to('#menu', 1, {autoAlpha:1});
+        TweenMax.to('#menu', 1, {autoAlpha: 1});
     });
 
 
@@ -46,7 +44,7 @@ export default () => {
     const countDownDate = new Date("Jan 5, 2018 23:59:59").getTime();
 
     // Update the count down every 1 second
-    const x = setInterval(function() {
+    const x = setInterval(function () {
 
         // Get todays date and time
         const now = new Date().getTime();
