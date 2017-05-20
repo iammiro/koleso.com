@@ -39,6 +39,27 @@ export default () => {
         TweenMax.to('#menu', 1, {autoAlpha: 1});
     });
 
+    $('#open-close-btn').click(function () {
+        if($( "#open-close-btn" ).hasClass( "open-auto" )) {
+            console.log('0');
+            $( "#open-close-btn" ).removeClass( "open-auto" );
+            $( "#open-close-btn" ).addClass( "close-auto" );
+            document.getElementById("open-close-btn").innerHTML = "Закрыть автомобиль";
+            $( "#car-status" ).addClass( "red" );
+            $( "#car-status" ).removeClass( "grey" );
+            document.getElementById("car-status").innerHTML = "Открыт";
+        } else {
+            console.log('1');
+            $( "#open-close-btn" ).removeClass( "close-auto" );
+            $( "#open-close-btn" ).addClass( "open-auto" );
+            document.getElementById("open-close-btn").innerHTML = "Открыть автомобиль";
+            $( "#car-status" ).css( "font-color: #51D47F;" );
+            $( "#car-status" ).addClass( "grey" );
+            $( "#car-status" ).removeClass( "red" );
+            document.getElementById("car-status").innerHTML = "Закрыт";
+        }
+    });
+
 
     // Set the date we're counting down to
     const countDownDate = new Date("Jan 5, 2018 23:59:59").getTime();

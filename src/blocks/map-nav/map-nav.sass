@@ -10,8 +10,24 @@
     color: #626970
     font-family: $medium-font-stack
     font-size: 15px
+  &__nav-wrapper
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: flex-start
+    #car-status
+      font-family: $light-font-stack
+      margin-top: 3px
+      font-size: 14px
   &__back-link, &__menu-link
     width: 10%
+    cursor: pointer
     @include flex-row-center-center
     & img
       height: 20px
+
+.grey
+  color: #626970
+
+.red
+  color: #FB5050
